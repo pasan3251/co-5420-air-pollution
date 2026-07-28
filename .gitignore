@@ -1,0 +1,45 @@
+# Ignore files with zone identifiers
+!**/*:Zone.Identifier
+
+
+# Specific zone identifier files
+*.ipynb:Zone.Identifier
+*.ipynbZone.Identifier
+
+
+# Ignore VS Code settings files
+.vscode/
+
+# Ignore virtual environment
+venv/
+env/
+
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+
+# Ignore Jupyter cache
+.ipynb_checkpoints/
+
+# Ignore Jupyterlab settings
+.jupyter/
+.jupyterlab/
+
+# Ignore PyCharm settings
+.idea/
+
+# Ignore local configuration
+.env
+.env.local
+.env.*.local
+
+# Ignore editor settings
+.editorconfig
+
+# Ignore logs
+logs/
+*.log
+
+# Ignore data directory
+data/
+
