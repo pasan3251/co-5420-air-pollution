@@ -1,0 +1,24 @@
+{
+  "dataset": {
+    "rows": 315648,
+    "raw_columns": 18,
+    "stations": 12,
+    "start_datetime": "2013-03-01 00:00:00",
+    "end_datetime": "2016-02-29 23:00:00",
+    "duplicate_station_timestamps": 0,
+    "timestamp_gaps": 0
+  },
+  "target": {
+    "name": "PM2.5",
+    "valid_values": 309276,
+    "missing_values": 6372,
+    "mean": 80.3623992809012,
+    "median": 56.0,
+    "minimum": 2.0,
+    "maximum": 999.0
+  },
+  "split_boundaries": {
+    "validation_start": "2015-09-01 00:00:00",
+    "local_test_start": "2015-12-01 00:00:00"
+  }
+}
