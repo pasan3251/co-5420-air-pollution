@@ -1,2 +1,3 @@
 experiment_id,date,author,branch,model,window_hours,feature_set,split_id,seed,validation_rmse,validation_mae,status,notes
 AUDIT-001,2026-07-29,D.K.G.P.C.B. Wijerathne,feature/data-audit,data-audit,24,raw-features,time-split-v1,42,,,completed,Verified structure missing values temporal continuity target distribution and chronological split
+PREP-001,2026-07-29,D.K.G.P.C.B. Wijerathne,feature/preprocessing,preprocessing,24,all-features,time-split-v1,42,,,completed,Causal station-aware forward fill training-only median imputation cyclical encoding station encoding and training-only scaling

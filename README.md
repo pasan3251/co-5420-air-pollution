@@ -50,3 +50,26 @@ All experiments must record:
 - Validation RMSE
 - Validation MAE
 - Important observations
+
+## Leakage-safe preprocessing
+
+The preprocessing pipeline follows these rules:
+
+1. Observations are sorted by station and datetime.
+2. The original PM2.5 observation is preserved as `target_PM2.5`.
+3. Numerical input features are forward-filled only within the same station.
+4. Remaining leading missing values use medians calculated from the training split.
+5. Backward filling is not used because it can expose future measurements.
+6. The numerical scaler is fitted using the training split only.
+7. Hour, day of week, and day of year are encoded cyclically.
+8. Wind direction is represented using sine and cosine components.
+9. Station identity is represented using one-hot features.
+10. Missing-value indicators are retained as model inputs.
+
+The chronological split is:
+
+- Training: before 2015-09-01
+- Validation: 2015-09-01 to 2015-11-30
+- Local test: from 2015-12-01
+
+Split membership is based on the prediction target timestamp.
