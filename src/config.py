@@ -48,3 +48,31 @@ WEATHER_COLUMNS = [
 
 WINDOW_SIZE = 24
 RANDOM_SEED = 42
+
+# Leakage-safe chronological split boundaries
+VALIDATION_START = "2015-09-01 00:00:00"
+LOCAL_TEST_START = "2015-12-01 00:00:00"
+
+# The original observed PM2.5 value is preserved separately because
+# the PM2.5 feature itself will be imputed and scaled.
+TARGET_OBSERVED_COLUMN = "target_PM2.5"
+
+WIND_DIRECTION_COLUMN = "wd"
+
+NUMERIC_INPUT_COLUMNS = [
+    "PM2.5",
+    "PM10",
+    "SO2",
+    "NO2",
+    "CO",
+    "O3",
+    "TEMP",
+    "PRES",
+    "DEWP",
+    "RAIN",
+    "WSPM",
+]
+
+PROCESSED_HOURLY_PATH = PROCESSED_DATA_DIR / "hourly_features.parquet"
+
+PREPROCESSOR_PATH = PROCESSED_DATA_DIR / "air_pollution_preprocessor.joblib"
