@@ -174,3 +174,25 @@ RECURRENT_RANGE_METRICS_PATH = (
 RECURRENT_PREDICTIONS_DIR = (
     PREDICTIONS_DIR / "recurrent"
 )
+
+# Temporal ablation experiment artefacts
+TEMPORAL_ABLATION_RESULTS_PATH = (
+    METRICS_DIR / "temporal_ablation_results.csv"
+)
+
+TEMPORAL_ABLATION_SUMMARY_PATH = (
+    METRICS_DIR / "temporal_ablation_summary.csv"
+)
+
+TEMPORAL_ABLATION_HISTORY_DIR = (
+    METRICS_DIR / "temporal_ablation_histories"
+)
+
+TEMPORAL_ABLATION_MODEL_DIR = (
+    MODELS_DIR / "temporal_ablation"
+)
+
+TEMPORAL_ABLATION_FIGURE_PATH = (
+    FIGURES_DIR
+    / "20_temporal_ablation_validation_rmse.png"
+)

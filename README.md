@@ -176,8 +176,8 @@ Negative predictions are clipped to zero during evaluation.
 
 | Split | RMSE | MAE | R² |
 |---|---:|---:|---:|
-| Validation | 15.7176 | 8.7623 | 0.9677 |
-| Local test | 25.2410 | 11.9686 | 0.9512 |
+| Validation | 15.6733 | 8.7399 | 0.9679 |
+| Local test | 25.1482 | 11.9499 | 0.9516 |
 
 ## LSTM and GRU temporal models
 
@@ -230,5 +230,69 @@ Temporal batches are generated on demand instead of storing the complete three-d
 
 | Model | Validation RMSE | Validation MAE | Local-test RMSE | Local-test MAE |
 |---|---:|---:|---:|---:|
-| LSTM | 15.770727 | 8.461189 | 28.084790 | 11.875520 |
-| GRU | 16.238746 | 8.616883 | 27.581773 | 12.261572 |
+| LSTM | 15.6505 | 8.3936 | 25.9367 | 11.4252 |
+| GRU | 16.0906 | 8.4478 | 27.4224 | 11.8377 |
+
+## Temporal ablation design
+
+A controlled GRU experiment evaluates two project questions:
+
+1. How much historical context is useful for one-hour-ahead prediction?
+2. Do meteorological variables improve forecasting beyond pollutant history?
+
+The experiment grid contains:
+
+| Window | Pollution-only | All features |
+|---:|---:|---:|
+| 6 hours | Yes | Yes |
+| 12 hours | Yes | Yes |
+| 24 hours | Yes | Yes |
+
+All configurations use the same target samples, train-validation split,
+architecture, optimiser, units, batch size, stopping policy and random seed.
+
+The pollution-only feature set retains pollutant measurements, pollutant
+missing-value indicators, cyclical time features and station identity. It
+excludes temperature, pressure, dew point, rain, wind speed and wind
+direction.
+
+Configuration selection uses validation RMSE only. Local-test evaluation is
+performed only after the final configuration has been frozen.
+
+### Temporal ablation findings
+
+Meteorological information improved GRU validation RMSE at every tested
+window length:
+
+| Window | Pollution-only RMSE | All-features RMSE |
+|---:|---:|---:|
+| 6 hours | 17.2793 | 16.3545 |
+| 12 hours | 17.2064 | 16.2914 |
+| 24 hours | 17.0593 | 16.1782 |
+
+The 24-hour all-features GRU produced the best single-run validation result.
+However, the improvement over 12 hours was small relative to its additional
+training time.
+
+The selected recurrent configuration is:
+
+- Architecture: GRU
+- Window: 24 hours
+- Features: all 43 features
+- GRU units: 64
+- Dense units: 32
+- Dropout: 0.20
+- Batch size: 512
+- Learning rate: 0.001
+
+### Random-seed robustness
+
+| Seed | Validation RMSE | Validation MAE | Best epoch |
+|---:|---:|---:|---:|
+| 42 | 16.178228 | 8.501350 | 19 |
+| 123 | 15.958253 | 8.434038 | 18 |
+| 2026 | 16.276832 | 8.450451 | 11 |
+
+Mean validation RMSE: 16.137771069870812
+
+Validation RMSE standard deviation: 0.16309733424471895
