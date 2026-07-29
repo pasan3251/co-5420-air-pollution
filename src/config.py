@@ -196,3 +196,32 @@ TEMPORAL_ABLATION_FIGURE_PATH = (
     FIGURES_DIR
     / "20_temporal_ablation_validation_rmse.png"
 )
+
+# Feedforward-LSTM ensemble artefacts
+ENSEMBLE_WEIGHT_SEARCH_PATH = (
+    METRICS_DIR / "ensemble_weight_search.csv"
+)
+
+ENSEMBLE_METRICS_PATH = (
+    METRICS_DIR / "ensemble_metrics.csv"
+)
+
+ENSEMBLE_STATION_METRICS_PATH = (
+    METRICS_DIR / "ensemble_station_metrics.csv"
+)
+
+ENSEMBLE_RANGE_METRICS_PATH = (
+    METRICS_DIR / "ensemble_pollution_range_metrics.csv"
+)
+
+ENSEMBLE_PREDICTIONS_DIR = (
+    PREDICTIONS_DIR / "ensemble"
+)
+
+ENSEMBLE_WEIGHT_FIGURE_PATH = (
+    FIGURES_DIR / "21_ensemble_weight_search.png"
+)
+
+FINAL_MODEL_COMPARISON_FIGURE_PATH = (
+    FIGURES_DIR / "22_final_model_comparison.png"
+)
