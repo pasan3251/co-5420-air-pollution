@@ -1,0 +1,4 @@
+split,sequences,stations,first_target,last_target,target_mean,target_median,target_standard_deviation
+train,257639,12,2013-03-02,2015-08-31 23:00:00,79.89125,58.0,75.06301
+validation,25458,12,2015-09-01,2015-11-30 23:00:00,78.668785,46.0,87.508545
+local_test,25891,12,2015-12-01,2016-02-29 23:00:00,87.52849,37.0,114.28532

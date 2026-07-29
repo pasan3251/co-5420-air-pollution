@@ -76,3 +76,12 @@ NUMERIC_INPUT_COLUMNS = [
 PROCESSED_HOURLY_PATH = PROCESSED_DATA_DIR / "hourly_features.parquet"
 
 PREPROCESSOR_PATH = PROCESSED_DATA_DIR / "air_pollution_preprocessor.joblib"
+
+# Sequence construction
+SEQUENCE_INDEX_PATH = PROCESSED_DATA_DIR / "sequence_index.parquet"
+
+SEQUENCE_SUMMARY_PATH = METRICS_DIR / "sequence_split_summary.csv"
+
+SEQUENCE_STATION_SUMMARY_PATH = METRICS_DIR / "sequence_station_summary.csv"
+
+SEQUENCE_METADATA_PATH = METRICS_DIR / "sequence_metadata.json"

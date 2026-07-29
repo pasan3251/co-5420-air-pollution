@@ -73,3 +73,37 @@ The chronological split is:
 - Local test: from 2015-12-01
 
 Split membership is based on the prediction target timestamp.
+
+## Temporal sequence construction
+
+Each forecasting sample uses 24 historical hourly observations from one
+monitoring station to predict PM2.5 at the following hour.
+
+For a target time `t`, the input is:
+
+```text
+t - 24, t - 23, ..., t - 2, t - 1
+```
+and the prediction target is:
+
+```text
+PM2.5 at t
+```
+
+Sequence-building rules:
+
+1. A sequence never crosses a station boundary.
+2. All 24 input timestamps must be consecutive.
+3. The target timestamp must be exactly one hour after the final input.
+4. Samples with missing true PM2.5 targets are excluded.
+5. target_PM2.5 is never included in the input feature list.
+6. Split membership is determined by the target timestamp.
+7. Validation and local-test windows may use earlier historical observations from the preceding split because those values would be available at prediction time.
+8. The full 3D training tensor is not saved. A lightweight sequence index is stored and batches are generated when required.
+
+
+Current input shape:
+
+```text
+24 time steps × 43 features
+```
