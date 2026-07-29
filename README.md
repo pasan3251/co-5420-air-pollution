@@ -137,3 +137,44 @@ Reported metrics include:
 - R-squared;
 - station-wise performance;
 - performance across PM2.5 concentration ranges.
+
+## Feedforward neural-network baseline
+
+The feedforward network uses the same 115 engineered features as Ridge
+regression and histogram gradient boosting. This provides a fair comparison
+between traditional models and neural learning without recurrent sequence
+processing.
+
+Architecture:
+
+```text
+Input(115)
+→ Dense(128, ReLU)
+→ Dropout(0.20)
+→ Dense(64, ReLU)
+→ Dropout(0.15)
+→ Dense(32, ReLU)
+→ Dense(1, Linear)
+```
+
+Training configuration:
+
+- Adam optimizer
+- Mean squared error loss
+- Validation RMSE for model selection
+- Gradient clipping with norm 1.0
+- Early stopping
+- Learning-rate reduction on validation plateaus
+- Best-model checkpointing
+- Random seed 42
+
+The dense model predicts PM2.5 directly in its original concentration units.
+Negative predictions are clipped to zero during evaluation.
+
+
+### Feedforward results
+
+| Split | RMSE | MAE | R² |
+|---|---:|---:|---:|
+| Validation | 15.7176 | 8.7623 | 0.9677 |
+| Local test | 25.2410 | 11.9686 | 0.9512 |
