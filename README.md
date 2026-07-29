@@ -178,3 +178,57 @@ Negative predictions are clipped to zero during evaluation.
 |---|---:|---:|---:|
 | Validation | 15.7176 | 8.7623 | 0.9677 |
 | Local test | 25.2410 | 11.9686 | 0.9512 |
+
+## LSTM and GRU temporal models
+
+The recurrent models receive the original temporal structure:
+
+```text
+24 historical hours × 43 features
+```
+
+Both models use equivalent configurations for a fair comparison.
+
+LSTM architecture
+
+```text
+Input(24, 43)
+→ LSTM(64)
+→ Layer Normalisation
+→ Dropout(0.20)
+→ Dense(32, ReLU)
+→ Dropout(0.10)
+→ Dense(1, Linear)
+```
+
+GRU architecture
+
+```text
+Input(24, 43)
+→ GRU(64)
+→ Layer Normalisation
+→ Dropout(0.20)
+→ Dense(32, ReLU)
+→ Dropout(0.10)
+→ Dense(1, Linear)
+```
+
+Training uses:
+
+- Adam optimisation;
+- mean squared error loss;
+- validation RMSE for checkpoint selection;
+- gradient clipping;
+- early stopping;
+- learning-rate reduction;
+- deterministic random seed 42;
+- identical train, validation and local-test sequences.
+
+Temporal batches are generated on demand instead of storing the complete three-dimensional dataset in memory.
+
+### Recurrent results
+
+| Model | Validation RMSE | Validation MAE | Local-test RMSE | Local-test MAE |
+|---|---:|---:|---:|---:|
+| LSTM | 15.770727 | 8.461189 | 28.084790 | 11.875520 |
+| GRU | 16.238746 | 8.616883 | 27.581773 | 12.261572 |
