@@ -100,3 +100,35 @@ BASELINE_METRICS_PATH = METRICS_DIR / "baseline_metrics.csv"
 BASELINE_STATION_METRICS_PATH = METRICS_DIR / "baseline_station_metrics.csv"
 
 BASELINE_PREDICTIONS_DIR = PREDICTIONS_DIR / "baselines"
+
+# Generated neural-network models
+MODELS_DIR = ROOT_DIR / "models"
+
+FEEDFORWARD_MODEL_PATH = (
+    MODELS_DIR / "feedforward_nn.keras"
+)
+
+FEEDFORWARD_HISTORY_PATH = (
+    METRICS_DIR / "feedforward_training_history.csv"
+)
+
+FEEDFORWARD_METRICS_PATH = (
+    METRICS_DIR / "feedforward_metrics.csv"
+)
+
+FEEDFORWARD_STATION_METRICS_PATH = (
+    METRICS_DIR / "feedforward_station_metrics.csv"
+)
+
+FEEDFORWARD_RANGE_METRICS_PATH = (
+    METRICS_DIR
+    / "feedforward_pollution_range_metrics.csv"
+)
+
+FEEDFORWARD_MODEL_SUMMARY_PATH = (
+    METRICS_DIR / "feedforward_model_summary.txt"
+)
+
+FEEDFORWARD_PREDICTIONS_DIR = (
+    PREDICTIONS_DIR / "feedforward"
+)
