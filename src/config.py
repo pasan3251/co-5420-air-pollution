@@ -85,3 +85,18 @@ SEQUENCE_SUMMARY_PATH = METRICS_DIR / "sequence_split_summary.csv"
 SEQUENCE_STATION_SUMMARY_PATH = METRICS_DIR / "sequence_station_summary.csv"
 
 SEQUENCE_METADATA_PATH = METRICS_DIR / "sequence_metadata.json"
+
+# Baseline model artefacts
+RIDGE_BASELINE_PATH = PROCESSED_DATA_DIR / "ridge_baseline.joblib"
+
+GRADIENT_BOOSTING_BASELINE_PATH = (
+    PROCESSED_DATA_DIR / "hist_gradient_boosting_baseline.joblib"
+)
+
+BASELINE_FEATURE_NAMES_PATH = METRICS_DIR / "baseline_feature_names.json"
+
+BASELINE_METRICS_PATH = METRICS_DIR / "baseline_metrics.csv"
+
+BASELINE_STATION_METRICS_PATH = METRICS_DIR / "baseline_station_metrics.csv"
+
+BASELINE_PREDICTIONS_DIR = PREDICTIONS_DIR / "baselines"
