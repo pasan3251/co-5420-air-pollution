@@ -132,3 +132,45 @@ FEEDFORWARD_MODEL_SUMMARY_PATH = (
 FEEDFORWARD_PREDICTIONS_DIR = (
     PREDICTIONS_DIR / "feedforward"
 )
+
+# Recurrent neural-network model artefacts
+LSTM_MODEL_PATH = (
+    MODELS_DIR / "lstm_forecaster.keras"
+)
+
+GRU_MODEL_PATH = (
+    MODELS_DIR / "gru_forecaster.keras"
+)
+
+LSTM_HISTORY_PATH = (
+    METRICS_DIR / "lstm_training_history.csv"
+)
+
+GRU_HISTORY_PATH = (
+    METRICS_DIR / "gru_training_history.csv"
+)
+
+LSTM_MODEL_SUMMARY_PATH = (
+    METRICS_DIR / "lstm_model_summary.txt"
+)
+
+GRU_MODEL_SUMMARY_PATH = (
+    METRICS_DIR / "gru_model_summary.txt"
+)
+
+RECURRENT_METRICS_PATH = (
+    METRICS_DIR / "recurrent_metrics.csv"
+)
+
+RECURRENT_STATION_METRICS_PATH = (
+    METRICS_DIR / "recurrent_station_metrics.csv"
+)
+
+RECURRENT_RANGE_METRICS_PATH = (
+    METRICS_DIR
+    / "recurrent_pollution_range_metrics.csv"
+)
+
+RECURRENT_PREDICTIONS_DIR = (
+    PREDICTIONS_DIR / "recurrent"
+)
