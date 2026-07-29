@@ -9,4 +9,4 @@ joblib
 pyyaml
 tqdm
 pytest
-ruff
+ruffpyarrow
