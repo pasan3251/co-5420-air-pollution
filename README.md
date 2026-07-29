@@ -232,3 +232,29 @@ Temporal batches are generated on demand instead of storing the complete three-d
 |---|---:|---:|---:|---:|
 | LSTM | 15.770727 | 8.461189 | 28.084790 | 11.875520 |
 | GRU | 16.238746 | 8.616883 | 27.581773 | 12.261572 |
+
+## Temporal ablation design
+
+A controlled GRU experiment evaluates two project questions:
+
+1. How much historical context is useful for one-hour-ahead prediction?
+2. Do meteorological variables improve forecasting beyond pollutant history?
+
+The experiment grid contains:
+
+| Window | Pollution-only | All features |
+|---:|---:|---:|
+| 6 hours | Yes | Yes |
+| 12 hours | Yes | Yes |
+| 24 hours | Yes | Yes |
+
+All configurations use the same target samples, train-validation split,
+architecture, optimiser, units, batch size, stopping policy and random seed.
+
+The pollution-only feature set retains pollutant measurements, pollutant
+missing-value indicators, cyclical time features and station identity. It
+excludes temperature, pressure, dew point, rain, wind speed and wind
+direction.
+
+Configuration selection uses validation RMSE only. Local-test evaluation is
+performed only after the final configuration has been frozen.
