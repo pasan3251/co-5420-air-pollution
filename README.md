@@ -107,3 +107,33 @@ Current input shape:
 ```text
 24 time steps × 43 features
 ```
+
+## Forecasting baselines
+
+The project evaluates four traditional forecasting baselines:
+
+1. **Persistence:** use PM2.5 from the final input hour.
+2. **Historical mean:** use mean PM2.5 over the previous 24 hours.
+3. **Ridge regression:** learn a regularised linear relationship from lag,
+   latest-hour, temporal, station, weather and summary features.
+4. **Histogram gradient boosting:** learn nonlinear relationships from the
+   same tabular feature representation.
+
+Ridge and gradient boosting use 115 derived features:
+
+- latest values of all 43 sequence features;
+- all 24 historical PM2.5 lags;
+- mean, standard deviation, minimum and maximum for 11 numerical features;
+- PM2.5 changes over 1, 3, 6 and 12 hours.
+
+Model selection uses validation RMSE. The local-test period is retained as
+a final internal generalisation check and is not used for hyperparameter
+selection.
+
+Reported metrics include:
+
+- RMSE;
+- MAE;
+- R-squared;
+- station-wise performance;
+- performance across PM2.5 concentration ranges.
