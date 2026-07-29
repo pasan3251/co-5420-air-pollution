@@ -5,6 +5,7 @@
 # Specific zone identifier files
 *.ipynb:Zone.Identifier
 *.ipynbZone.Identifier
+*.pyZone.Identifier
 
 
 # Ignore VS Code settings files
