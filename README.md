@@ -296,3 +296,29 @@ The selected recurrent configuration is:
 Mean validation RMSE: 16.137771069870812
 
 Validation RMSE standard deviation: 0.16309733424471895
+
+## Feedforward-LSTM ensemble
+
+A convex weighted ensemble was evaluated using the two strongest neural
+models:
+
+$$
+\hat{y}
+=
+w\hat{y}_{\text{feedforward}}
++
+(1-w)\hat{y}_{\text{LSTM}}
+$$
+
+The ensemble weight was selected using validation RMSE only. The local-test
+split was not used during weight selection.
+
+| Model | Validation RMSE | Local-test RMSE |
+|---|---:|---:|
+| Feedforward | 15.6733 | 25.1482 |
+| LSTM | 15.6505 | 25.9367 |
+| Ensemble | 15.5321 | 24.8601 |
+
+Selected feedforward weight: 0.63
+
+Selected LSTM weight: 0.37

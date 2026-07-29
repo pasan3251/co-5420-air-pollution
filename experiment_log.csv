@@ -11,3 +11,4 @@ NN-002,2026-07-29,D.K.G.P.C.B. Wijerathne,feature/lstm-gru,lstm,24,sequence-43,t
 NN-003,2026-07-29,D.K.G.P.C.B. Wijerathne,feature/lstm-gru,gru,24,sequence-43,time-split-v1,42,16.0906,8.4478,completed,GRU 64 units with layer normalisation dropout early stopping and learning-rate reduction
 ABL-007,2026-07-29,D.K.G.P.C.B. Wijerathne,experiment/temporal-ablation,gru,24,all-features,time-split-v1,123,15.958253,8.434038,completed,Robustness run for selected 24-hour all-feature GRU
 ABL-008,2026-07-29,D.K.G.P.C.B. Wijerathne,experiment/temporal-ablation,gru,24,all-features,time-split-v1,2026,16.276832,8.450451,completed,Robustness run for selected 24-hour all-feature GRU
+ENS-001,2026-07-29,D.K.G.P.C.B. Wijerathne,experiment/model-ensemble,feedforward-lstm-ensemble,24,mixed-tabular-sequence,time-split-v1,42,15.5321,,completed,Validation-selected convex ensemble of feedforward and LSTM predictions
