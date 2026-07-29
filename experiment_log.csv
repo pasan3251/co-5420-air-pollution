@@ -7,5 +7,5 @@ BASE-002,2026-07-29,D.K.G.P.C.B. Wijerathne,feature/baselines,historical-mean,24
 BASE-003,2026-07-29,D.K.G.P.C.B. Wijerathne,feature/baselines,ridge,24,tabular-115,time-split-v1,42,16.7889,9.3273,completed,Ridge alpha 10 using lag latest and summary features
 BASE-004,2026-07-29,D.K.G.P.C.B. Wijerathne,feature/baselines,gradient-boosting,24,tabular-115,time-split-v1,42,16.7294,8.5922,completed,Histogram gradient boosting with 150 iterations
 NN-001,2026-07-29,D.K.G.P.C.B. Wijerathne,feature/feedforward-nn,feedforward-nn,24,tabular-115,time-split-v1,42,15.7176,8.7623,completed,Dense 128-64-32 with dropout early stopping and learning-rate reduction
-NN-002,2026-07-29,D.K.G.P.C.B. Wijerathne,feature/lstm-gru,lstm,24,sequence-43,time-split-v1,42,VALIDATION_RMSE,VALIDATION_MAE,completed,LSTM 64 units with layer normalisation dropout early stopping and learning-rate reduction
-NN-003,2026-07-29,D.K.G.P.C.B. Wijerathne,feature/lstm-gru,gru,24,sequence-43,time-split-v1,42,VALIDATION_RMSE,VALIDATION_MAE,completed,GRU 64 units with layer normalisation dropout early stopping and learning-rate reduction
+NN-002,2026-07-29,D.K.G.P.C.B. Wijerathne,feature/lstm-gru,lstm,24,sequence-43,time-split-v1,42,15.770727,8.461189,completed,LSTM 64 units with layer normalisation dropout early stopping and learning-rate reduction
+NN-003,2026-07-29,D.K.G.P.C.B. Wijerathne,feature/lstm-gru,gru,24,sequence-43,time-split-v1,42,16.238746,8.616883,completed,GRU 64 units with layer normalisation dropout early stopping and learning-rate reduction
