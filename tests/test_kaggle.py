@@ -84,11 +84,91 @@ def make_test_frame() -> pd.DataFrame:
     """Create two flattened 24-hour Kaggle windows."""
 
     data: dict[str, list[object]] = {
-        "id": ["test_00001", "test_00002"],
-        "station": ["StationA", "StationB"],
+        "id": [
+            "test_00001",
+            "test_00002",
+        ],
+        "station": [
+            "StationA",
+            "StationB",
+        ],
     }
 
-    # Populate all lag columns in data[...]
+    starts = [
+        pd.Timestamp("2016-01-01 00:00:00"),
+        pd.Timestamp("2016-02-01 00:00:00"),
+    ]
+
+    for time_step, lag in enumerate(
+        range(24, 0, -1)
+    ):
+        datetimes = [
+            start
+            + pd.Timedelta(hours=time_step)
+            for start in starts
+        ]
+
+        data[f"year_lag_{lag}"] = [
+            value.year
+            for value in datetimes
+        ]
+
+        data[f"month_lag_{lag}"] = [
+            value.month
+            for value in datetimes
+        ]
+
+        data[f"day_lag_{lag}"] = [
+            value.day
+            for value in datetimes
+        ]
+
+        data[f"hour_lag_{lag}"] = [
+            value.hour
+            for value in datetimes
+        ]
+
+        for column_number, column in enumerate(
+            POLLUTANT_COLUMNS
+        ):
+            data[f"{column}_lag_{lag}"] = [
+                20.0
+                + time_step
+                + column_number,
+                40.0
+                + time_step
+                + column_number,
+            ]
+
+        data[f"TEMP_lag_{lag}"] = [
+            10.0 + time_step,
+            15.0 + time_step,
+        ]
+
+        data[f"PRES_lag_{lag}"] = [
+            1000.0 + time_step,
+            1010.0 + time_step,
+        ]
+
+        data[f"DEWP_lag_{lag}"] = [
+            5.0 + time_step,
+            7.0 + time_step,
+        ]
+
+        data[f"RAIN_lag_{lag}"] = [
+            0.0,
+            0.1,
+        ]
+
+        data[f"wd_lag_{lag}"] = [
+            "N",
+            "E",
+        ]
+
+        data[f"WSPM_lag_{lag}"] = [
+            1.0,
+            2.0,
+        ]
 
     return pd.DataFrame(data)
 
