@@ -9,6 +9,8 @@ DATA_DIR = ROOT_DIR / "data"
 RAW_DATA_DIR = DATA_DIR / "raw"
 PROCESSED_DATA_DIR = DATA_DIR / "processed"
 
+SUBMISSIONS_DIR = DATA_DIR / "submissions"
+
 NOTEBOOKS_DIR = ROOT_DIR / "notebooks"
 
 RESULTS_DIR = ROOT_DIR / "results"
@@ -224,4 +226,41 @@ ENSEMBLE_WEIGHT_FIGURE_PATH = (
 
 FINAL_MODEL_COMPARISON_FIGURE_PATH = (
     FIGURES_DIR / "22_final_model_comparison.png"
+)
+
+# Final Kaggle refit and submission artefacts
+FINAL_MODEL_DIR = (
+    MODELS_DIR / "final"
+)
+
+FINAL_PREPROCESSOR_PATH = (
+    FINAL_MODEL_DIR / "final_preprocessor.joblib"
+)
+
+FINAL_FEEDFORWARD_MODEL_PATH = (
+    FINAL_MODEL_DIR / "final_feedforward.keras"
+)
+
+FINAL_LSTM_MODEL_PATH = (
+    FINAL_MODEL_DIR / "final_lstm.keras"
+)
+
+FINAL_FEEDFORWARD_HISTORY_PATH = (
+    METRICS_DIR / "final_feedforward_training_history.csv"
+)
+
+FINAL_LSTM_HISTORY_PATH = (
+    METRICS_DIR / "final_lstm_training_history.csv"
+)
+
+FINAL_SUBMISSION_PATH = (
+    SUBMISSIONS_DIR / "final_ensemble_submission.csv"
+)
+
+FINAL_SUBMISSION_METADATA_PATH = (
+    METRICS_DIR / "final_submission_metadata.json"
+)
+
+FINAL_SUBMISSION_VALIDATION_PATH = (
+    METRICS_DIR / "final_submission_validation.json"
 )

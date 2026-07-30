@@ -1,0 +1,34 @@
+{
+  "created_at_utc": "2026-07-29T19:32:20.977607+00:00",
+  "tensorflow_version": "2.21.0",
+  "gpu_devices": [
+    "/physical_device:GPU:0"
+  ],
+  "training_raw_rows": 315648,
+  "training_sequences": 308988,
+  "test_samples": 4103,
+  "sequence_shape": [
+    24,
+    43
+  ],
+  "tabular_feature_count": 115,
+  "feedforward_epochs": 4,
+  "lstm_epochs": 19,
+  "feedforward_training_seconds": 16.869670773998223,
+  "lstm_training_seconds": 104.88145902199904,
+  "feedforward_weight": 0.49,
+  "lstm_weight": 0.51,
+  "random_seed": 42,
+  "test_target_start": "2016-03-02T00:00:00",
+  "test_target_end": "2017-02-28T13:00:00",
+  "submission_filename": "final_ensemble_submission.csv",
+  "submission_sha256": "f5536fc576940566bf847463519826a60184131392f5163cf3ca958d4a882cb3",
+  "submission_validation": {
+    "rows": 4103,
+    "prediction_min": 6.0212626457214355,
+    "prediction_max": 585.4427490234375,
+    "prediction_mean": 75.12853386621198,
+    "prediction_standard_deviation": 78.6427020178735
+  },
+  "data_policy": "Only train_raw.csv, test.csv and sample_submission.csv were accessed. test_raw.csv was not used."
+}

@@ -53,7 +53,6 @@ from sklearn.metrics import (
     r2_score,
 )
 
-
 DEFAULT_FILE = (
     "results/predictions/ensemble/"
     "validation_predictions.csv"

@@ -31,16 +31,12 @@ import numpy as np
 import pandas as pd
 import tensorflow as tf
 
-
 ROOT_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT_DIR))
 
-from src.preprocessing import (  # noqa: E402
-    TIME_FEATURE_COLUMNS,
+from src.preprocessing import (
     WIND_DIRECTION_TO_DEGREES,
-    WIND_FEATURE_COLUMNS,
 )
-
 
 DEFAULT_TEST_PATH = Path("data/raw/test.csv")
 DEFAULT_SAMPLE_SUBMISSION_PATH = Path(
