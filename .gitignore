@@ -23,6 +23,7 @@ data/raw/*
 !data/raw/.gitkeep
 data/submissions/*
 !data/submissions/.gitkeep
+!data/submissions/final_kaggle_notebook_submission.csv
 
 data/processed/*
 !data/processed/.gitkeep

@@ -9,6 +9,8 @@ DATA_DIR = ROOT_DIR / "data"
 RAW_DATA_DIR = DATA_DIR / "raw"
 PROCESSED_DATA_DIR = DATA_DIR / "processed"
 
+SUBMISSIONS_DIR = DATA_DIR / "submissions"
+
 NOTEBOOKS_DIR = ROOT_DIR / "notebooks"
 
 RESULTS_DIR = ROOT_DIR / "results"
