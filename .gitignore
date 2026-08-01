@@ -1,45 +1,56 @@
-# Ignore files with zone identifiers
-!**/*:Zone.Identifier
+# Windows zone identifier sidecar files
+*:Zone.Identifier
 
-
-# Specific zone identifier files
-*.ipynb:Zone.Identifier
-*Zone.Identifier
-*Zone.Identifier
-
-# Ignore VS Code settings files
-.vscode/
-
-# Ignore virtual environment
-venv/
-env/
-
-# Ignore Python cache
+# Python cache
 __pycache__/
 *.py[cod]
+*.egg-info/
 
-# Ignore Jupyter cache
+# Virtual environments
+.venv/
+venv/
+env/
+.conda/
+.env
+
+# Jupyter
 .ipynb_checkpoints/
 
-# Ignore Jupyterlab settings
-.jupyter/
-.jupyterlab/
+# Testing and linting
+.pytest_cache/
+.ruff_cache/
+.coverage
 
-# Ignore PyCharm settings
-.idea/
+# Raw and generated data
+data/raw/*
+!data/raw/.gitkeep
+data/submissions/*
+!data/submissions/.gitkeep
+!data/submissions/final_kaggle_notebook_submission.csv
 
-# Ignore local configuration
-.env
-.env.local
-.env.*.local
+data/processed/*
+!data/processed/.gitkeep
 
-# Ignore editor settings
-.editorconfig
+# Model files
+*.keras
+*.h5
+*.joblib
+*.pkl
+*.pickle
+checkpoints/
 
-# Ignore logs
-logs/
+# Generated prediction files
+results/predictions/*
+!results/predictions/.gitkeep
+
+# Temporary files
+*.tmp
 *.log
+~$*
 
-# Ignore data directory
-data/
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
 

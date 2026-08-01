@@ -1,0 +1,3 @@
+model,split,samples,feedforward_weight,lstm_weight,rmse,mae,r2
+feedforward_lstm_ensemble,validation,25458,0.49,0.51,15.336542283661183,8.291916934362575,0.9692835500206414
+feedforward_lstm_ensemble,local_test,25891,0.49,0.51,24.833928461702467,11.317898867180098,0.9527799151493608

@@ -1,1 +1,14 @@
-date,experiment,notebook,model,window_size,rmse,mae,r2,notes
+experiment_id,date,author,branch,model,window_hours,feature_set,split_id,seed,validation_rmse,validation_mae,status,notes
+AUDIT-001,2026-07-29,D.K.G.P.C.B. Wijerathne,feature/data-audit,data-audit,24,raw-features,time-split-v1,42,,,completed,Verified structure missing values temporal continuity target distribution and chronological split
+PREP-001,2026-07-29,D.K.G.P.C.B. Wijerathne,feature/preprocessing,preprocessing,24,all-features,time-split-v1,42,,,completed,Causal station-aware forward fill training-only median imputation cyclical encoding station encoding and training-only scaling
+SEQ-001,2026-07-29,D.K.G.P.C.B. Wijerathne,feature/sequence-builder,sequence-index,24,all-features,time-split-v1,42,,,completed,Constructed leakage-safe 24-hour windows with next-hour targets and memory-efficient batch generation
+BASE-001,2026-07-29,D.K.G.P.C.B. Wijerathne,feature/baselines,persistence,24,PM2.5-lag-1,time-split-v1,42,17.6065,9.0208,completed,Last observed PM2.5 used as next-hour prediction
+BASE-002,2026-07-29,D.K.G.P.C.B. Wijerathne,feature/baselines,historical-mean,24,PM2.5-history,time-split-v1,42,50.7812,30.5809,completed,Mean of previous 24 PM2.5 values
+BASE-003,2026-07-29,D.K.G.P.C.B. Wijerathne,feature/baselines,ridge,24,tabular-115,time-split-v1,42,16.7889,9.3273,completed,Ridge alpha 10 using lag latest and summary features
+BASE-004,2026-07-29,D.K.G.P.C.B. Wijerathne,feature/baselines,gradient-boosting,24,tabular-115,time-split-v1,42,16.7294,8.5922,completed,Histogram gradient boosting with 150 iterations
+NN-001,2026-07-29,D.K.G.P.C.B. Wijerathne,feature/feedforward-nn,feedforward-nn,24,tabular-115,time-split-v1,42,15.6733,8.7399,completed,Dense 128-64-32 with dropout early stopping and learning-rate reduction
+NN-002,2026-07-29,D.K.G.P.C.B. Wijerathne,feature/lstm-gru,lstm,24,sequence-43,time-split-v1,42,15.6505,8.3936,completed,LSTM 64 units with layer normalisation dropout early stopping and learning-rate reduction
+NN-003,2026-07-29,D.K.G.P.C.B. Wijerathne,feature/lstm-gru,gru,24,sequence-43,time-split-v1,42,16.0906,8.4478,completed,GRU 64 units with layer normalisation dropout early stopping and learning-rate reduction
+ABL-007,2026-07-29,D.K.G.P.C.B. Wijerathne,experiment/temporal-ablation,gru,24,all-features,time-split-v1,123,15.958253,8.434038,completed,Robustness run for selected 24-hour all-feature GRU
+ABL-008,2026-07-29,D.K.G.P.C.B. Wijerathne,experiment/temporal-ablation,gru,24,all-features,time-split-v1,2026,16.276832,8.450451,completed,Robustness run for selected 24-hour all-feature GRU
+ENS-001,2026-07-29,D.K.G.P.C.B. Wijerathne,experiment/model-ensemble,feedforward-lstm-ensemble,24,mixed-tabular-sequence,time-split-v1,42,15.3365,8.2919,completed,Validation-selected 0.49 feedforward and 0.51 LSTM convex ensemble

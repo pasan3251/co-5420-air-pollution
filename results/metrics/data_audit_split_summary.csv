@@ -1,0 +1,4 @@
+split,rows,start_datetime,end_datetime,stations,valid_pm25_targets,rows_with_missing_features,missing_pm25_targets
+train,263232,2013-03-01,2015-08-31 23:00:00,12,257927,28922,5305
+validation,26208,2015-09-01,2015-11-30 23:00:00,12,25458,1519,750
+local_test,26208,2015-12-01,2016-02-29 23:00:00,12,25891,990,317
