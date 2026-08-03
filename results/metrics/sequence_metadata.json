@@ -55,7 +55,7 @@
     "local_test": 25891
   },
   "skipped_missing_targets": 6372,
-  "sequence_index_path": "C:\\Users\\wijer\\Documents\\GitHub\\co-5420-air-pollution\\data\\processed\\sequence_index.parquet",
+  "sequence_index_path": "/home/dilith_s_b_s/UoP/Sem_4/CO5420/DLProject/co-5420-air-pollution/data/processed/sequence_index.parquet",
   "input_shape": [
     24,
     43

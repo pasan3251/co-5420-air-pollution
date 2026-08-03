@@ -102,6 +102,6 @@
   },
   "missing_feature_values_after_processing": 0,
   "missing_targets_preserved": 6372,
-  "processed_dataset_path": "C:\\Users\\wijer\\Documents\\GitHub\\co-5420-air-pollution\\data\\processed\\hourly_features.parquet",
-  "preprocessor_path": "C:\\Users\\wijer\\Documents\\GitHub\\co-5420-air-pollution\\data\\processed\\air_pollution_preprocessor.joblib"
+  "processed_dataset_path": "/home/dilith_s_b_s/UoP/Sem_4/CO5420/DLProject/co-5420-air-pollution/data/processed/hourly_features.parquet",
+  "preprocessor_path": "/home/dilith_s_b_s/UoP/Sem_4/CO5420/DLProject/co-5420-air-pollution/data/processed/air_pollution_preprocessor.joblib"
 }
