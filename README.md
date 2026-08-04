@@ -27,7 +27,7 @@ generalisation check.
 | Robustness analysis | Complete | Selected GRU evaluated across three random seeds |
 | Model ensemble | Complete | Validation-selected feedforward–LSTM ensemble |
 | Kaggle submission | Complete | Structurally validated 4,103-row CSV |
-| Extended AQI task | Pending | Classification experiment proposed for the extended component |
+| Extended AQI task | Complete | 4-class AQI classification implemented with FF, LSTM, GRU and soft-voting ensemble |
 | Presentation and viva | Pending | Slides, contribution evidence, and viva preparation |
 
 ## Prediction task
